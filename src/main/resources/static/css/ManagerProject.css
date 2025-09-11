@@ -1,0 +1,70 @@
+/* Classic Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 700px;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+h1 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 2px solid #444;
+    padding-bottom: 5px;
+}
+
+h3 {
+    margin-top: 25px;
+    color: #444;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #aaa;
+}
+
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+th {
+    background: #f0f0f0;
+}
+
+/* Buttons */
+.actions {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    margin-right: 10px;
+    border: 1px solid #555;
+    background: #eee;
+    text-decoration: none;
+    color: #000;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background: #ddd;
+    border-color: #333;
+}

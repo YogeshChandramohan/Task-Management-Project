@@ -1,0 +1,113 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Page Container */
+.project-container {
+    background: #fff;
+    padding: 30px 35px;
+    border-radius: 14px;
+    box-shadow: 0px 8px 22px rgba(0,0,0,0.15);
+    width: 500px;
+    text-align: center;
+}
+
+/* Headings */
+.project-container h1 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #333;
+    font-size: 26px;
+}
+
+.project-container h3 {
+    margin-top: 25px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Project details text */
+.project-container p {
+    font-size: 16px;
+    margin: 8px 0;
+    text-align: left;
+}
+
+.project-container p strong {
+    color: #222;
+}
+
+/* Employee list */
+.project-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.project-container ul li {
+    background: #f1f8ff;
+    margin: 6px 0;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 15px;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.2s;
+}
+
+.project-container ul li:hover {
+    transform: translateX(5px);
+    background: #e3f2fd;
+}
+
+/* Button container */
+.project-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Assign Employees Button */
+.btn.assign {
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+    color: #fff;
+    border: none;
+}
+
+.btn.assign:hover {
+    background: linear-gradient(135deg, #5b86e5, #36d1dc);
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Back Button */
+.btn.back {
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    color: #fff;
+}
+
+.btn.back:hover {
+    background: linear-gradient(135deg, #ee0979, #ff6a00);
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}

@@ -1,0 +1,93 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Form Container */
+.form-container {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
+    width: 400px;
+    text-align: center;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #333;
+    font-size: 22px;
+}
+
+/* Form Fields */
+label {
+    display: block;
+    margin-top: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #444;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #42a5f5;
+    box-shadow: 0px 0px 8px rgba(66,165,245,0.4);
+    outline: none;
+}
+
+/* Buttons */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Update Button */
+.btn.update {
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+    color: #fff;
+    border: none;
+}
+
+.btn.update:hover {
+    background: linear-gradient(135deg, #5b86e5, #36d1dc);
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Cancel Button */
+.btn.cancel {
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    color: #fff;
+}
+
+.btn.cancel:hover {
+    background: linear-gradient(135deg, #ee0979, #ff6a00);
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}

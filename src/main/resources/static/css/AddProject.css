@@ -1,0 +1,145 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff6a00, #ee0979); /* Orange to Pink */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Form Container */
+.form-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    width: 400px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.form-container h2 {
+    margin-bottom: 25px;
+    font-weight: 700;
+    color: #d35400;
+    letter-spacing: 1px;
+}
+
+/* Form Groups */
+.styled-form .form-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.styled-form label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Input Fields */
+.input-field {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: 0.3s;
+    background: #fdfdfd;
+}
+
+.input-field:hover {
+    background: #fff7f0; /* light orange on hover */
+    border-color: #ee0979;
+}
+
+.input-field:focus {
+    border-color: #ff6a00;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 106, 0, 0.4);
+}
+
+/* Buttons */
+.form-actions {
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s, background 0.4s;
+    flex: 1;
+    text-align: center;
+    color: #fff;
+}
+
+/* Save Button */
+.btn-save {
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    box-shadow: 0px 4px 12px rgba(238, 9, 121, 0.4);
+}
+
+.btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 16px rgba(255, 106, 0, 0.6);
+    background: linear-gradient(135deg, #ee0979, #ff6a00); /* reversed gradient */
+}
+
+/* Cancel Button */
+.btn-cancel {
+    background: #f44336;
+}
+
+.btn-cancel:hover {
+    background: #d32f2f;
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 12px rgba(243, 67, 54, 0.5);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 450px) {
+    .form-container {
+        width: 90%;
+        padding: 30px 20px;
+    }
+}
+
+/* Save Button (matches your <button class="btn">) */
+.form-actions .btn {
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    color: #fff;
+    box-shadow: 0px 4px 12px rgba(238, 9, 121, 0.4);
+}
+
+.form-actions .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 16px rgba(255, 106, 0, 0.6);
+    background: linear-gradient(135deg, #ee0979, #ff6a00);
+}
+
+/* Cancel Button */
+.form-actions .btn.cancel {
+    background: #f44336;
+}
+
+.form-actions .btn.cancel:hover {
+    background: #d32f2f;
+}
