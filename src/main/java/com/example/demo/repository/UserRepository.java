@@ -1,6 +1,7 @@
 package com.example.demo.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -13,6 +14,10 @@ public interface UserRepository extends JpaRepository<User, Long>{
 	    public User findByLoginAndPassword(@Param("login") String login, @Param("password") String password);
 
 	 public List<User> findByRole(String role);
+	 
+	 @Query("SELECT u FROM User u LEFT JOIN FETCH u.projects WHERE u.id = :id")
+	 Optional<User> findByIdWithProjects(@Param("id") Long id);
+
 
 
 }

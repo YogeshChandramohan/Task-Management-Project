@@ -60,7 +60,7 @@
 <div class="login-container">
     <h2>Login</h2>
     <form action="${pageContext.request.contextPath}/login" method="post">
-        <input type="text" name="username" placeholder="Enter Username" required />
+        <input type="text" name="username" placeholder="Enter Mobile Number (or) Email" required />
         <input type="password" name="password" placeholder="Enter Password" required />
         <input type="submit" value="Login" />
     </form>

@@ -47,10 +47,16 @@ public class User {
     @OneToMany(mappedBy = "manager")
     private Set<Project> managedProjects = new HashSet<>();
 
+    @OneToMany(mappedBy = "employee")
+    private Set<Task> tasks = new HashSet<>();
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", mobile=" + mobile + ", email=" + email + ", password="
-				+ password + ", role=" + role + ", projects=" + projects + ", managedProjects=" + managedProjects + "]";
+				+ password + ", role=" + role + ", projects=" + projects + ", managedProjects=" + managedProjects
+				+ ", tasks=" + tasks + "]";
 	}
+    
+	
 
 }

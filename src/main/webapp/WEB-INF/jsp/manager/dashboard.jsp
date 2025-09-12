@@ -21,7 +21,7 @@
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+<!-- Navigation Bar -->
     <div class="navbar">
         <h2>⚙️ Manager Dashboard</h2>
         <div class="nav-links">

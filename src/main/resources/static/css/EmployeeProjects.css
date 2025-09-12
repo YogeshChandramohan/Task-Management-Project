@@ -1,0 +1,96 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+/* Body */
+body {
+    background: linear-gradient(135deg, #f0f4ff, #e9f7ff);
+    color: #333;
+    padding: 40px;
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto 30px auto;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Table Header */
+table th {
+    background: #4a90e2;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 14px 10px;
+    text-align: center;
+}
+
+/* Table Cells */
+table td {
+    padding: 12px 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+}
+
+/* Alternate Row Color */
+table tr:nth-child(even) {
+    background: #f9fcff;
+}
+
+/* Hover Effect */
+table tr:hover {
+    background: #eaf3ff;
+    transition: 0.3s ease;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: #4a90e2;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Back Button */
+a.btn:last-of-type {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0 auto;
+    text-align: center;
+    background: #27ae60;
+}
+
+a.btn:last-of-type:hover {
+    background: #1e874b;
+}

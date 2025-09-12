@@ -1,0 +1,190 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+/* Body */
+body {
+    background: linear-gradient(135deg, #f8fbff, #eef7ff);
+    color: #333;
+    padding: 40px;
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto 30px auto;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Table Header */
+table th {
+    background: #16a085;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 14px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Table Cells */
+table td {
+    padding: 12px 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* Alternate Row Color */
+table tr:nth-child(even) {
+    background: #f9fcff;
+}
+
+/* Hover Effect */
+table tr:hover {
+    background: #eafaf7;
+    transition: 0.3s ease;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: #16a085;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    background: #13856b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Back Button Center */
+a.btn {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0 auto;
+}
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Status dropdown */
+select[name="status"] {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+select[name="status"]:hover {
+    border-color: #4CAF50;
+}
+
+/* Update button */
+button[type="submit"] {
+    padding: 6px 12px;
+    margin-left: 8px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Back button */
+a.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 16px;
+    background-color: #2196F3;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+a.btn:hover {
+    background-color: #1976D2;
+}
+/* Center the Back button */
+a.btn {
+    display: inline-block;
+    margin: 30px auto;   /* Top-bottom spacing and auto left-right */
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* For centering */
+a.btn-container {
+    text-align: center;
+    display: block;
+}
+
+a.btn:hover {
+    background-color: #1976D2;
+}
