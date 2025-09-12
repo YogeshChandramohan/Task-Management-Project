@@ -36,10 +36,15 @@
                 <form:password path="password" cssClass="input-field" id="password"/>
             </div>
 
-            <div class="form-group">
-                <label for="role"><i class="fa fa-id-badge"></i> Role</label>
-                <form:input path="role" cssClass="input-field" id="role"/>
-            </div>
+			<div class="form-group">
+			    <label for="role"><i class="fa fa-id-badge"></i> Role</label>
+			    <form:select path="role" cssClass="input-field" id="role">
+			        <form:option value="" label="-- Select Role --"/>
+			        <form:option value="ADMIN" label="Admin"/>
+			        <form:option value="MANAGER" label="Manager"/>
+			        <form:option value="EMPLOYEE" label="Employee"/>
+			    </form:select>
+			</div>
 
             <div class="form-actions">
                 <button type="submit" class="btn"><i class="fa fa-check-circle"></i> Register</button><br><br>

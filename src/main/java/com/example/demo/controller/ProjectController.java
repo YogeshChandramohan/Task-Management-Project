@@ -123,5 +123,34 @@ private UserRepository repo;
 
 		        return "redirect:/projects/ManagerProjectView/" + projectId;
 		    }
+		    //update project status
+		    @PostMapping("/projects/{projectId}/updateStage")
+		    public String updateStage(@PathVariable Long projectId,
+		                              @RequestParam("stage") String stage) {
+		        Project project = projectRepository.findById(projectId).orElse(null);
+		        if (project != null) {
+		            project.setStage(stage);
+		            projectRepository.save(project);
+		        }
+		        return "redirect:/projects/ManagerProjectView/" + projectId;
+		    }
+		    
+		    // view Project stage by Admin 
+		    @GetMapping("/projects/view/{projectId}")
+		    public String viewProject(@PathVariable Long projectId, Model model) {
+		        Project project = projectRepository.findById(projectId).orElse(null);
+
+		        if (project == null) {
+		            return "redirect:/projects"; // redirect if not found
+		        }
+
+		        model.addAttribute("project", project);
+		        model.addAttribute("manager", project.getManager());
+		        model.addAttribute("employees", project.getUsers()); // assuming Project has Set<User> users
+		        model.addAttribute("stage", project.getStage());
+
+		        return "admin/ViewProject"; // JSP file
+		    }
+
 
 }

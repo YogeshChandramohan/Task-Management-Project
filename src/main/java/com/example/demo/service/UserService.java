@@ -26,13 +26,16 @@ public class UserService {
 		            session.setAttribute("loggedInUser", user);
 		            switch (user.getRole()) {
 		                case "ADMIN":
+		                	session.setAttribute("user", user);
 		                	model.addAttribute("user",user);
 		                    return "admin/dashboard";
 		                case "MANAGER":
 		                	model.addAttribute("user",user);
 		                	 session.setAttribute("managerId", user.getId());
+		                	 session.setAttribute("user", user);
 		                    return "manager/dashboard";
 		                case "EMPLOYEE":
+		                	session.setAttribute("user", user);
 		                	model.addAttribute("user",user);
 		                    return "employee/dashboard";
 		                default:
@@ -68,4 +71,10 @@ public class UserService {
 			 userRepository.deleteById(id);
 		        return "redirect:/users";
 		}
+		
+		//for task
+		 public User getUserById(Long id) {
+		        return userRepository.findById(id)
+		                .orElseThrow(() -> new RuntimeException("User not found with id " + id));
+		    }
 }

@@ -11,6 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,6 +30,8 @@ public class Project {
     private String description;
 	private LocalDate sdate;
 	private LocalDate edate;
+	private String stage;
+
 	
 	  // ✅ One manager
     @ManyToOne
@@ -38,11 +41,19 @@ public class Project {
     // ✅ Team members
     @ManyToMany(mappedBy = "projects")
     private Set<User> users = new HashSet<>();
+    
+    @OneToMany(mappedBy = "project")
+    private Set<Task> tasks = new HashSet<>();
 
 	@Override
 	public String toString() {
 		return "Project [id=" + id + ", name=" + name + ", description=" + description + ", sdate=" + sdate + ", edate="
-				+ edate + ", manager=" + manager + ", users=" + users + "]";
+				+ edate + ", stage=" + stage + ", manager=" + manager + ", users=" + users + ", tasks=" + tasks + "]";
 	}
 
-}
+	
+
+	
+
+	}
+

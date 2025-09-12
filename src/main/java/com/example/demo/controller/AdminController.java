@@ -11,7 +11,7 @@ public class AdminController {
 	@GetMapping("/admin/dashboard")
     public String dashboard(Model model, HttpSession session) {
         return "admin/dashboard"; 
-    }
+}
 	
-
+	
 }

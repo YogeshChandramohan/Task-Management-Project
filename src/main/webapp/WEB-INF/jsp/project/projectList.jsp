@@ -27,10 +27,9 @@
 		                    <tr>
 		                        <th>ID</th>
 		                        <th>Name</th>
-		                        
+								<th>Description</th>
 		                        <th>Start Date</th>
 		                        <th>Due Date</th>
-		                        <th>Description</th>
 								<th>Manager</th>
 		                        <th>Actions</th>
 								<th>View</th>

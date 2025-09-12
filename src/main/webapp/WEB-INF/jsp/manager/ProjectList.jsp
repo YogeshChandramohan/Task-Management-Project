@@ -45,6 +45,7 @@
 								<th>Description</th>
 		                        <th>Start Date</th>
 		                        <th>Due Date</th>
+								<th>Stage</th>
 								<th>View</th>
 		                    </tr>
 		                </thead>
@@ -60,6 +61,8 @@
 								<td><%= m.getDescription() %></td>
 		                        <td><%= m.getSdate() %></td>	
 		                        <td><%= m.getEdate() %></td>
+								<td><%= m.getStage() %></td>
+							
 								<td>
 								     <a href="${pageContext.request.contextPath}/projects/ManagerProjectView/<%= m.getId() %>" class="btn view"><i class="fa fa-eye"></i> View</a>
 								</td>
