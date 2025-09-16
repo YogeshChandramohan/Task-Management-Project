@@ -1,56 +1,118 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>User Registration</title>
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/UserRegistration.css">
+    <script>
+        let otpVerified = false;
+
+        function sendOtp() {
+            const email = document.getElementById("email").value;
+            if (!email) {
+                alert("Enter email first");
+                return;
+            }
+            fetch("${pageContext.request.contextPath}/send-otp", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: "email=" + encodeURIComponent(email)
+            }).then(res => res.text())
+              .then(data => {
+                  alert(data);
+                  document.getElementById("otp-section").style.display = "block";
+              });
+        }
+
+        function verifyOtp() {
+            const email = document.getElementById("email").value;
+            const otp = document.getElementById("otp").value;
+            fetch("${pageContext.request.contextPath}/verify-otp", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: "email=" + encodeURIComponent(email) + "&otp=" + encodeURIComponent(otp)
+            }).then(res => res.text())
+              .then(valid => {
+                  if (valid === "true") {
+                      alert("OTP Verified!");
+                      otpVerified = true;
+                      document.getElementById("register-btn").disabled = false;
+                  } else {
+                      alert("Invalid OTP!");
+                      otpVerified = false;
+                      document.getElementById("register-btn").disabled = true;
+                  }
+              });
+        }
+
+        function validateBeforeSubmit() {
+            if (!otpVerified) {
+                alert("Please verify OTP before registering.");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
-    <div class="form-container">
-        <h2><i class="fa fa-user-plus"></i> User Registration</h2>
+<div class="form-container">
+    <h2><i class="fa fa-user-plus"></i> User Registration</h2>
 
-        <form:form action="register" method="post" modelAttribute="user" class="styled-form">
-            <div class="form-group">
-                <label for="name"><i class="fa fa-user"></i> Name</label>
-                <form:input path="name" cssClass="input-field" id="name"/>
-            </div>
+    <form:form action="${pageContext.request.contextPath}/register" 
+               method="post" 
+               modelAttribute="user"
+               cssClass="styled-form"
+               onsubmit="return validateBeforeSubmit()">
 
-            <div class="form-group">
-                <label for="mobile"><i class="fa fa-phone"></i> Mobile</label>
-                <form:input path="mobile" cssClass="input-field" id="mobile"/>
-            </div>
+        <div class="form-group">
+            <label><i class="fa fa-user"></i> Name</label>
+            <form:input path="name" id="name" cssClass="input-field" />
+        </div>
 
-            <div class="form-group">
-                <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                <form:input path="email" cssClass="input-field" id="email"/>
-            </div>
+        <div class="form-group">
+            <label><i class="fa fa-phone"></i> Mobile</label>
+            <form:input path="mobile" id="mobile" cssClass="input-field" />
+        </div>
 
-            <div class="form-group">
-                <label for="password"><i class="fa fa-lock"></i> Password</label>
-                <form:password path="password" cssClass="input-field" id="password"/>
-            </div>
+        <div class="form-group">
+            <label><i class="fa fa-envelope"></i> Email</label>
+            <form:input path="email" id="email" cssClass="input-field" />
+            <button type="button" class="btn" onclick="sendOtp()"><i class="fa fa-paper-plane"></i> Send OTP</button>
+        </div>
 
-			<div class="form-group">
-			    <label for="role"><i class="fa fa-id-badge"></i> Role</label>
-			    <form:select path="role" cssClass="input-field" id="role">
-			        <form:option value="" label="-- Select Role --"/>
-			        <form:option value="ADMIN" label="Admin"/>
-			        <form:option value="MANAGER" label="Manager"/>
-			        <form:option value="EMPLOYEE" label="Employee"/>
-			    </form:select>
-			</div>
+        <div class="form-group" id="otp-section" style="display:none;">
+            <label><i class="fa fa-key"></i> Enter OTP</label>
+            <input type="text" id="otp" class="input-field" />
+            <button type="button" class="btn" onclick="verifyOtp()"><i class="fa fa-check-circle"></i> Verify OTP</button>
+        </div>
 
-            <div class="form-actions">
-                <button type="submit" class="btn"><i class="fa fa-check-circle"></i> Register</button><br><br>
-				 <a href="${pageContext.request.contextPath}/users" class="btn cancel"><i class="fa fa-times-circle"></i> Cancel</a>
-            </div>
-        </form:form>
-    </div>
+        <div class="form-group">
+            <label><i class="fa fa-lock"></i> Password</label>
+            <form:password path="password" id="password" cssClass="input-field" />
+        </div>
+
+        <div class="form-group">
+            <label><i class="fa fa-user-shield"></i> Role</label>
+            <form:select path="role" id="role" cssClass="input-field">
+                <form:option value="" label="-- Select Role --"/>
+                <form:option value="ADMIN" label="Admin"/>
+                <form:option value="MANAGER" label="Manager"/>
+                <form:option value="EMPLOYEE" label="Employee"/>
+            </form:select>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" id="register-btn" class="btn submit" disabled>
+                <i class="fa fa-user-check"></i> Register
+            </button>
+            <a href="${pageContext.request.contextPath}/users" class="btn cancel">
+                <i class="fa fa-times-circle"></i> Cancel
+            </a>
+        </div>
+    </form:form>
+</div>
+
+<!-- FontAwesome CDN for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </body>
 </html>

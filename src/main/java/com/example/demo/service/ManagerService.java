@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.example.demo.entity.Project;
+import com.example.demo.entity.User;
 import com.example.demo.repository.ProjectRepository;
 
 @Service
@@ -19,4 +20,5 @@ public class ManagerService {
 		   model.addAttribute("projects", projects);  
 	        return "manager/ProjectList";
 	}
+	
 }

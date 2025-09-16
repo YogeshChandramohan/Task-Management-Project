@@ -17,8 +17,12 @@ public interface UserRepository extends JpaRepository<User, Long>{
 	 
 	 @Query("SELECT u FROM User u LEFT JOIN FETCH u.projects WHERE u.id = :id")
 	 Optional<User> findByIdWithProjects(@Param("id") Long id);
-
-
+	 
+	 
+	 @Query(value = "select * from user where resource = 'Bench'" , nativeQuery  = true)
+	 public List<User> findByResource();
+	 
+	 Optional<User> findByEmail(String email);
 
 }
 

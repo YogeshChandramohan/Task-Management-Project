@@ -34,6 +34,13 @@ public class UserController {
 	        User user = userService.login(username, password);
 	        return userService.loginCheck(session, user, model);
 	    }
+	 
+//	 @GetMapping("/admin/dashboard")
+//	 public void getDetails() {
+//		 
+//	 }
+//	 
+//	 
 	 @GetMapping("/register")
 	    public String showForm(Model model,User user) {
 	        model.addAttribute("user", user);
@@ -74,4 +81,22 @@ public class UserController {
 	    	return userService.deleteUser(id);
 	    }
 	 
+	    //forget password
+	    @GetMapping("/forgotPassword")
+	    public String showForgotPasswordPage() {
+	        return "user/forgot-password"; // JSP page
+	    }
+
+	    @PostMapping("/forgotPassword")
+	    public String processForgotPassword(@RequestParam("email") String email, Model model) {
+	        boolean status = userService.sendPasswordByEmail(email);
+
+	        if (status) {
+	            model.addAttribute("message", "Password has been sent to your email.");
+	        } else {
+	            model.addAttribute("error", "No account found with that email.");
+	        }
+	        return "user/forgot-password";  // JSP page
+	    }
+
 }

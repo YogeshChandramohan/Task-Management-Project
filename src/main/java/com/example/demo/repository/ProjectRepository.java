@@ -1,5 +1,6 @@
 package com.example.demo.repository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,6 +10,8 @@ import com.example.demo.entity.Project;
 public interface ProjectRepository extends JpaRepository<Project, Long>{
 	
 	public List<Project> findByManager_Id(Long id);
+	
+	List<Project> findByEdate(LocalDate edate);
 	
 
 }

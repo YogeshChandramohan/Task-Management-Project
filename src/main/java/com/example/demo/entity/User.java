@@ -33,6 +33,7 @@ public class User {
 	private String email;
 	private String password;
 	private String role;
+	private String resource;
 	
 	 // ✅ Projects where this user is a team member
     @ManyToMany
@@ -53,10 +54,9 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", mobile=" + mobile + ", email=" + email + ", password="
-				+ password + ", role=" + role + ", projects=" + projects + ", managedProjects=" + managedProjects
-				+ ", tasks=" + tasks + "]";
+				+ password + ", role=" + role + ", resource=" + resource + ", projects=" + projects
+				+ ", managedProjects=" + managedProjects + ", tasks=" + tasks + "]";
 	}
-    
 	
 
 }

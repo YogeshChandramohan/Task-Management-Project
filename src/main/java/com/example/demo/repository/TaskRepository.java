@@ -1,5 +1,6 @@
 package com.example.demo.repository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,4 +17,7 @@ public interface TaskRepository extends JpaRepository<Task, Long>{
 	                                        @Param("employeeId") Long employeeId);
 	 
 	 List<Task> findByProject_IdAndEmployee_Id(Long projectId, Long employeeId);
+	 
+	 List<Task> findByDueDate(LocalDate dueDate);
+	 
 }

@@ -16,6 +16,7 @@ import com.example.demo.entity.User;
 import com.example.demo.repository.ProjectRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.ProjectService;
+import com.example.demo.service.UserService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -23,6 +24,10 @@ import jakarta.servlet.http.HttpSession;
 public class ProjectController {
 	@Autowired
 	private ProjectService projectService;
+	
+	@Autowired
+	private UserService userService;
+	
 	//Get All Projects
 		 @GetMapping("/projects")
 		    public String listProjects(Model model) {          
@@ -112,7 +117,8 @@ private UserRepository repo;
 
 		        Project project = projectRepository.findById(projectId).orElseThrow();
 		        List<User> employees = userRepository.findAllById(employeeIds);
-
+//		        List<User> employees = userService.getEmpByResource();
+//		        System.out.println(employees);
 		        for (User emp : employees) {
 		            project.getUsers().add(emp);
 		            emp.getProjects().add(project);

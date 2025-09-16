@@ -1,4 +1,4 @@
-/* General Styles */
+/* 🌐 General Styles */
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
@@ -10,19 +10,19 @@ body {
     height: 100vh;
 }
 
-/* Form Container */
+/* 📦 Form Container */
 .form-container {
     background: #fff;
     padding: 40px;
     border-radius: 16px;
-    width: 400px;
+    width: 420px;
     box-shadow: 0px 8px 20px rgba(0,0,0,0.25);
     text-align: center;
     animation: fadeIn 0.8s ease-in-out;
 }
 
 .form-container h2 {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     font-weight: 700;
     color: #d35400;
     letter-spacing: 1px;
@@ -33,7 +33,7 @@ body {
     margin-right: 8px;
 }
 
-/* Form Groups */
+/* 📝 Form Groups */
 .styled-form .form-group {
     text-align: left;
     margin-bottom: 18px;
@@ -52,7 +52,7 @@ body {
     color: #e74c3c;
 }
 
-/* Input Fields */
+/* 🔲 Input Fields */
 .input-field {
     width: 100%;
     padding: 10px 12px;
@@ -69,64 +69,13 @@ body {
     box-shadow: 0px 0px 8px rgba(255,106,0,0.4);
 }
 
-/* Button */
-.form-actions {
-    margin-top: 22px;
-}
-
-.btn {
-    background: linear-gradient(135deg, #ff6a00, #ee0979);
-    color: #fff;
-    border: none;
-    padding: 12px 18px;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    width: 100%;
-    box-shadow: 0px 4px 12px rgba(238, 9, 121, 0.4);
-}
-
-.btn i {
-    margin-right: 6px;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0px 6px 16px rgba(255, 106, 0, 0.6);
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-}
-/* Input Fields */
-.input-field {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 14px;
-    transition: 0.3s;
-    background: #fdfdfd;
-}
-
-/* Focus effect */
-.input-field:focus {
-    border-color: #ff6a00;
-    outline: none;
-    box-shadow: 0px 0px 8px rgba(255,106,0,0.4);
-}
-
-/* ✅ Hover effect on input */
+/* ✅ Hover effect */
 .input-field:hover {
     background: #fff7f0; /* light orange background */
     border-color: #ee0979;
 }
 
-/* Button */
+/* 🔘 General Button Style */
 .btn {
     background: linear-gradient(135deg, #ff6a00, #ee0979);
     color: #fff;
@@ -139,42 +88,58 @@ body {
     transition: transform 0.2s, box-shadow 0.2s, background 0.4s;
     width: 100%;
     box-shadow: 0px 4px 12px rgba(238, 9, 121, 0.4);
+    display: inline-block;
 }
 
-/* ✅ Hover effect on button */
+.btn i {
+    margin-right: 6px;
+}
+
+/* Hover Gradient Flip */
 .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0px 6px 16px rgba(255, 106, 0, 0.6);
-    background: linear-gradient(135deg, #ee0979, #ff6a00); /* reversed gradient */
+    background: linear-gradient(135deg, #ee0979, #ff6a00); /* reversed */
 }
 
-/* Buttons */
-.form-actions .btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-right: 10px;
-    text-decoration: none;
-    color: #fff;
+/* 🚀 Form Actions */
+.form-actions {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
 }
 
-/* Submit Button */
-.form-actions .btn:first-child {
+/* Register Button */
+.form-actions .btn.submit {
     background: #4CAF50; /* Green */
+    flex: 1;
 }
 
-.form-actions .btn:first-child:hover {
+.form-actions .btn.submit:disabled {
+    background: #bbb;
+    cursor: not-allowed;
+}
+
+.form-actions .btn.submit:hover:not(:disabled) {
     background: #45a049;
 }
 
 /* Cancel Button */
 .form-actions .btn.cancel {
     background: #f44336; /* Red */
+    flex: 1;
+    text-decoration: none;
+    text-align: center;
+    line-height: 20px;
 }
 
 .form-actions .btn.cancel:hover {
     background: #d32f2f;
+}
+
+/* 🎬 Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
